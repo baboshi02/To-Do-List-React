@@ -4,6 +4,7 @@ import { useState } from "react";
 export const InputTask = ({ setToDoItems }) => {
   const [task, setTask] = useState();
   const handleSubmit = () => {
+    if (task.length < 1) return;
     setToDoItems((prev) => [...prev, task]);
     setTask("");
   };
@@ -17,12 +18,14 @@ export const InputTask = ({ setToDoItems }) => {
       >
         <input
           type="text"
-          className="bg-gray-300 rounded-sm p-1"
+          className="bg-gray-300 rounded-sm p-1 border border-black"
           placeholder="Task"
           onChange={(e) => setTask(e.target.value)}
           value={task}
         />
-        <button className="bg-red-500 ">Add</button>
+        <button className="bg-red-500 hover:bg-red-800 active:bg-red-300 active:border-gray-400 rounded-sm border border-black p-1 ml-0.5">
+          Add
+        </button>
       </form>
     </div>
   );
