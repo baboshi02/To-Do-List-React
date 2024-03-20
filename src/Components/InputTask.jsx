@@ -1,11 +1,12 @@
 import React from "react";
 import { useState } from "react";
-
+import { v4 as uuidv4 } from "uuid";
 export const InputTaskForm = ({ setToDoItems }) => {
   const [task, setTask] = useState("");
   const handleSubmit = () => {
+    const id = uuidv4();
     if (task.length < 1) return;
-    setToDoItems((prev) => [...prev, task]);
+    setToDoItems((prev) => [...prev, { task, id, isEditing: false }]);
     setTask("");
   };
   return (
