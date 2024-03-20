@@ -1,4 +1,5 @@
-import { InputTask } from "./Components/InputTask";
+import { InputTaskForm } from "./Components/InputTask";
+import { Task } from "./Components/task";
 import { useState } from "react";
 export default function App() {
   const [toDoItems, setToDoItems] = useState([]);
@@ -9,17 +10,9 @@ export default function App() {
   return (
     <div className="bg-gray-200 p-5 text-center rounded-sm border-2 border-black box-border shadow-md ">
       <h1 className="text-yellow-700 text-2xl">Todo List</h1>
-      <InputTask setToDoItems={setToDoItems} />
+      <InputTaskForm setToDoItems={setToDoItems} />
       {toDoItems.map((item) => (
-        <div className="bg-zinc-400 mb-0.5 rounded border relative  border-black">
-          {item}
-          <button
-            className="bg-green-300 border h-full rounded-sm border-black absolute right-0 "
-            onClick={() => handleDelete(item)}
-          >
-            delete
-          </button>
-        </div>
+        <Task item={item} handleDelete={handleDelete} />
       ))}
     </div>
   );

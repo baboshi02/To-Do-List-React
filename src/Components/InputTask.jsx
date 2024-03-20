@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
 
-export const InputTask = ({ setToDoItems }) => {
-  const [task, setTask] = useState();
+export const InputTaskForm = ({ setToDoItems }) => {
+  const [task, setTask] = useState("");
   const handleSubmit = () => {
     if (task.length < 1) return;
     setToDoItems((prev) => [...prev, task]);
