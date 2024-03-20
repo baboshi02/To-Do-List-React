@@ -12,7 +12,12 @@ export default function App() {
       <h1 className="text-yellow-700 text-2xl">Todo List</h1>
       <InputTaskForm setToDoItems={setToDoItems} />
       {toDoItems.map((item) => (
-        <Task item={item} key={item.id} handleDelete={handleDelete} />
+        <Task
+          item={item}
+          key={item.id}
+          setToDoItems={setToDoItems}
+          handleDelete={handleDelete}
+        />
       ))}
     </div>
   );

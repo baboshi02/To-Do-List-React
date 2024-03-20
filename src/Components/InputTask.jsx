@@ -6,7 +6,7 @@ export const InputTaskForm = ({ setToDoItems }) => {
   const handleSubmit = () => {
     const id = uuidv4();
     if (task.length < 1) return;
-    setToDoItems((prev) => [...prev, { task, id, isEditing: false }]);
+    setToDoItems((prev) => [...prev, { task, id }]);
     setTask("");
   };
   return (
