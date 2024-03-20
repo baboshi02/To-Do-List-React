@@ -15,8 +15,8 @@ export default function App() {
         <Task
           item={item}
           key={item.id}
-          setToDoItems={setToDoItems}
           handleDelete={handleDelete}
+          setToDoItems={setToDoItems}
         />
       ))}
     </div>

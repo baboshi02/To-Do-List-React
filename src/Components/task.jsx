@@ -12,12 +12,14 @@ export const Task = ({ item, handleDelete, setToDoItems }) => {
               e.preventDefault();
               if (task.length < 1) {
                 handleDelete(item);
+                return;
               }
               setToDoItems((prev) =>
                 prev.map((items) =>
                   items.id == item.id ? { ...items, task } : items
                 )
               );
+              console.log(isEditing);
               setIsEditing((prev) => !prev);
             }}
           >
@@ -28,7 +30,10 @@ export const Task = ({ item, handleDelete, setToDoItems }) => {
               onChange={(e) => setTask(e.target.value)}
               value={task}
             />
-            <button className="bg-red-500 hover:bg-red-800 active:bg-red-300 active:border-gray-400 rounded-sm border border-black p-1 ml-0.5">
+            <button
+              type="submit"
+              className="bg-red-500 hover:bg-red-800 active:bg-red-300 active:border-gray-400 rounded-sm border border-black p-1 ml-0.5"
+            >
               Edit
             </button>
           </form>
