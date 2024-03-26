@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { InputTaskEditing } from "./InputTaskEditing";
 // Todo fixing Done functionality @Done
 // Todo replacing text with Icons
+// Todo Adding cancel editing functionality
 export const Task = ({ item, handleDelete, setToDoItems }) => {
   const [isDone, setIsDone] = useState(false);
   const [isEditing, setIsEditing] = useState(false);

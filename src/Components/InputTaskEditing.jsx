@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 
 export const InputTaskEditing = ({ item, setToDoItems, setIsEditing }) => {
   const [task, setTask] = useState(item.task);
@@ -10,11 +9,11 @@ export const InputTaskEditing = ({ item, setToDoItems, setIsEditing }) => {
           e.preventDefault();
           if (task.length < 1) {
             alert("Length must be one or more");
-            setIsEditing((prev) => !prev);
+            setIsEditing(false);
             return;
           } else if (task.length > 15) {
             alert("length must be less than 15");
-            setIsEditing((prev) => !prev);
+            setIsEditing(false);
             return;
           }
           setToDoItems((prev) =>

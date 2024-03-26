@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+
 export const InputTaskForm = ({ setToDoItems }) => {
   const [task, setTask] = useState("");
   const handleSubmit = (e) => {
@@ -17,6 +18,7 @@ export const InputTaskForm = ({ setToDoItems }) => {
     <div className="mb-1">
       <form onSubmit={handleSubmit}>
         <input
+          required
           type="text"
           className="bg-gray-300 rounded-sm p-1 border border-black"
           placeholder="Task"
