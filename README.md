@@ -1,6 +1,6 @@
-# To DO list
+# To Do list
 
-Basic to do list implemented with React JS
+Basic to do list App implemented with React JS.
 
 ## Preview
-https://baboshi02.github.io/To-Do-List-React/
+[To Do App](https://baboshi02.github.io/To-Do-List-React/)
